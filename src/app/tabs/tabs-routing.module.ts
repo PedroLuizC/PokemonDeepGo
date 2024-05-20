@@ -4,7 +4,7 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     component: TabsPage,
     children: [
       {
@@ -16,7 +16,7 @@ const routes: Routes = [
         loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
       },
       {
-        path: 'tab3',
+        path: 'tab3', // Adicione esta linha se precisar de uma rota para tab3
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
       },
       {
@@ -35,5 +35,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
 export class TabsPageRoutingModule {}
